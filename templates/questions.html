@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Question Blanks</title>
+	</head>
+	<body>
+		<h1>Madlibs</h1>
+
+		<!-- when you click submit button it will take you to /story page -->
+		<form action="/story">
+			<table>
+				{% for prompt in prompts %}
+				<tr>
+					<td>
+						<label for="{{prompt}}">{{prompt}}:</label>
+						<input
+							type="text"
+							placeholder="enter {{prompt}}"
+							id="{{prompt}}"
+							name="{{prompt}}"
+						/>
+					</td>
+				</tr>
+				{%endfor%}
+			</table>
+			<button>Submit</button>
+		</form>
+	</body>
+</html>
